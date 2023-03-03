@@ -1,0 +1,7 @@
+.bg-img {
+    background-image: url('https://images.pexels.com/photos/15286/pexels-photo.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 950px;
+}
