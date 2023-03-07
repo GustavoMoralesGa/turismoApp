@@ -5,3 +5,63 @@
     background-attachment: fixed;
     height: 950px;
 }
+
+.active{
+    color: black;
+    margin: 1rem;
+    text-decoration: none;
+}
+
+.active:hover {
+    color: black;
+    margin: 1rem;
+    text-decoration: underline;
+}
+
+.noactive{
+    color: grey;
+    margin: 1rem;
+    text-decoration: none;
+}
+
+.noactive:hover {
+    color: black;
+    margin: 1rem;
+    text-decoration: underline;
+}
+
+
+
+@media(min-width:576px) {
+    .modalcart {
+    margin-top: 0;
+    margin-left: 13%;
+    }
+}
+
+@media(min-width:768px) {
+    .modalcart {
+    margin-top: 0;
+    margin-left: 20%;
+    }
+}
+
+@media(min-width:992px) {
+    .modalcart {
+    margin-top: 0;
+    margin-left: 28%;
+    }
+}
+@media(min-width:1200px) {
+    .modalcart {
+    margin-top: 0;
+    margin-left: 31%;
+    }
+}
+
+@media(min-width:1400px) {
+    .modalcart {
+    margin-top: 0;
+    margin-left: 33%;
+    }
+}
