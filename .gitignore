@@ -1,5 +1,20 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,react,windows,linux,macos
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,react,windows,linux,macos
+# Created by https://www.toptal.com/developers/gitignore/api/windows,git,node,react,macos,linux
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,git,node,react,macos,linux
+
+### Git ###
+# Created by git for backups. To disable backups in Git:
+# $ git config --global mergetool.keepBackup false
+*.orig
+
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
 
 ### Linux ###
 *~
@@ -194,7 +209,7 @@ dist
 **/*.backup.*
 **/*.back.*
 
-**/node_modules
+node_modules
 
 *.sublime*
 
@@ -228,4 +243,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/node,react,windows,linux,macos
+# End of https://www.toptal.com/developers/gitignore/api/windows,git,node,react,macos,linux
