@@ -25,7 +25,7 @@ export default function Login() {
                     </Form.Group>
                     <Form.Group className="mt-3" controlId="formBasicCheckbox">
                         <Form.Check className="text-start" type="checkbox" label="Recuérdame" />
-                        <Alert.Link className="d-flex justify-content-end" href="#">¿No tienes una cuenta? Regístrate aquí</Alert.Link>
+                        <Alert.Link className="d-flex justify-content-end m-2" href="#">¿No tienes una cuenta? Regístrate aquí</Alert.Link>
                     </Form.Group>
                     <Button variant="dark mb-4" type="submit">
                         Acceder
