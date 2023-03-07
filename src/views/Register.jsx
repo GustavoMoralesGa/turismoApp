@@ -38,9 +38,9 @@ export default function Register() {
                             <Form.Label>Contraseña</Form.Label>
                             <Form.Control type="password" placeholder="Ingresa tu Contraseña" />
                         </Form.Group>
-                        <Form.Group className="d-flex mb-3" controlId="formBasicCheckbox">
-                            <Form.Check className='text-start' type="checkbox" label="Confirmo que he leído y acepto la" />
-                            <Alert.Link className='text-start mx-1' href="#">Política de privacidad</Alert.Link>
+                        <Form.Group className="d-flex mb-3 flex-wrap" controlId="formBasicCheckbox">
+                            <Form.Check className='mx-1' type="checkbox" label="Confirmo que he leído y acepto la" />
+                            <Alert.Link className='ms-1' href="#">Política de privacidad</Alert.Link>
                         </Form.Group>
                         <Button variant="dark" type="submit">
                             Registrar
