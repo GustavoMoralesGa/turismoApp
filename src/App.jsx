@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from "./components/Navbar"
@@ -9,11 +9,14 @@ import Home from './views/Home'
 import Tours from './views/Tours'
 import Context from '../Context'
 import Cart from './views/Cart'
+import { Profile } from './views/Profile'
 
 function App() {
+  const [usuario, setUsuario] = useState(null);
+
   return (
     <div className="App">
-      <Context.Provider>
+      <Context.Provider value={{ usuario, setUsuario }}>
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -22,11 +25,12 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/carrito" element={<Cart />} />
+            <Route path="/profile" element={usuario ? (<Profile />) : (<NotFound />)} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </Context.Provider>
-      
+
     </div>
   )
 }
