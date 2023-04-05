@@ -6,18 +6,18 @@ import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import "../assets/css/style.css"
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
+import { decodeToken } from "react-jwt";
 
 export default function Login() {
-    const { setUsuario } = useContext(Context);
+    const { setUsuario, setUserData } = useContext(Context);
     const navigate = useNavigate();
     const [usuario, setUsuarioLocal] = useState({});
-    const DBUser = {
-        dbEmail: 'jmolinaa@hotmail.es',
-        dbPassword: '1234'
-    };
+
+
+
     const { email, password } = usuario;
-    const { dbEmail, dbPassword } = DBUser;
+
 
     const handleSetUsuario = ({ target: { value, name } }) => {
         const field = {};
@@ -25,21 +25,25 @@ export default function Login() {
         setUsuarioLocal({ ...usuario, ...field });
     };
 
-    const iniciarSesion = /* async */ () => {
-        // const urlServer = "http://localhost:3000";
-        // const endpoint = "/login";
+    const onFormSubmit = async (event) => {
+        event.preventDefault()
+        const urlServer = "http://localhost:3001";
+        const endpoint = "/user/login";
+
+
         try {
             if (!email || !password) return alert("Email y password obligatorias");
-            // const { data: token } = await axios.post(urlServer + endpoint, usuario);
-            if (email === dbEmail && password === dbPassword) {
-                alert("Usuario identificado con éxito 😀");
-                // localStorage.setItem("token", token);
-                setUsuario(true)
-                navigate("/profile");
-            }
-        } catch ({ response: { data: message } }) {
-            alert(message + " 🙁");
-            console.log(message);
+            const respuesta = await axios.post(urlServer + endpoint, usuario);
+            const myDecodedToken = decodeToken(respuesta.data);
+            setUserData(myDecodedToken.user)
+
+
+            alert("Usuario identificado con éxito 😀");
+            setUsuario(true)
+            navigate("/profile");
+
+        } catch (error) {
+            console.log(error);
         }
     };
     return (
@@ -48,7 +52,7 @@ export default function Login() {
                 <div className='mt-3'>
                     <h1>Iniciar Sesión</h1>
                 </div>
-                <Form className='text-left'>
+                <Form className='text-left' onSubmit={onFormSubmit}>
                     <Form.Group className="mt-3" controlId="formBasicEmail">
                         <Form.Label>Dirección de Email</Form.Label>
                         <Form.Control type="email" placeholder="Ingresa tu Email" name='email' value={email} onChange={handleSetUsuario} />
@@ -60,9 +64,9 @@ export default function Login() {
                     </Form.Group>
                     <Form.Group className="mt-3" controlId="formBasicCheckbox">
                         <Form.Check className="text-start" type="checkbox" label="Recuérdame" />
-                        <Alert.Link className="d-flex justify-content-end m-2" href="#">¿No tienes una cuenta? Regístrate aquí</Alert.Link>
+                        <Alert.Link className="d-flex justify-content-end m-2" href="/register">¿No tienes una cuenta? Regístrate aquí</Alert.Link>
                     </Form.Group>
-                    <Button variant="dark mb-4" type="submit" onClick={iniciarSesion}>
+                    <Button variant="dark mb-4" type="submit">
                         Acceder
                     </Button>
                 </Form>

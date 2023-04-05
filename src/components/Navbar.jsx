@@ -47,9 +47,11 @@ export default function Navigation() {
                             <NavLink to="/profile">
                                 <button className="btn btn-dark">Mi Perfil</button>
                             </NavLink>
-                            <button onClick={logout} className="btn btn-danger me-3">
+                            <button onClick={logout} className="btn btn-secondary me-3" style={{ marginLeft: '10px' }}>
                                 Salir
                             </button>
+                            <NavLink className={setActive} onClick={handleShow}><img src="https://cdn-icons-png.flaticon.com/512/4202/4202388.png" alt="Logo" width="30" />
+                            </NavLink>
                         </div>
                     )
                 }
