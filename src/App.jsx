@@ -7,13 +7,15 @@ import Register from './views/Register'
 import NotFound from './views/NotFound'
 import Home from './views/Home'
 import Tours from './views/Tours'
-import Context from '../Context'
 import Cart from './views/Cart'
+import ItemDetailContainer from './components/ItemDetailContainer'
+import CartProvider from '../CartContext'
+
 
 function App() {
   return (
     <div className="App">
-      <Context.Provider>
+      <CartProvider>
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -22,10 +24,11 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/carrito" element={<Cart />} />
+            <Route path="/detalle/:detalleId" element={<ItemDetailContainer />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-      </Context.Provider>
+      </CartProvider>
       
     </div>
   )
