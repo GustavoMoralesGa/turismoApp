@@ -3,6 +3,9 @@ import { NavLink, useNavigate } from "react-router-dom"
 import { Navbar, Container, Button, Modal } from "react-bootstrap"
 import Context from '../../Context';
 import '../assets/css/style.css'
+import { CartWidget } from '../CartWidget'
+
+import CartDetail from './CartDetail'
 
 const setActive = ({ isActive }) => (isActive ? "active" : "noactive")
 
@@ -39,7 +42,8 @@ export default function Navigation() {
                             <NavLink to="/register" className={setActive}>
                                 Registrarse
                             </NavLink>
-                            <NavLink className={setActive} onClick={handleShow}><img src="https://cdn-icons-png.flaticon.com/512/4202/4202388.png" alt="Logo" width="30" />
+                            <NavLink className={setActive} onClick={handleShow}>
+                                <CartWidget/> 
                             </NavLink>
                         </Container>
                     ) : (
@@ -50,35 +54,36 @@ export default function Navigation() {
                             <button onClick={logout} className="btn btn-secondary me-3" style={{ marginLeft: '10px' }}>
                                 Salir
                             </button>
-                            <NavLink className={setActive} onClick={handleShow}><img src="https://cdn-icons-png.flaticon.com/512/4202/4202388.png" alt="Logo" width="30" />
+                            <NavLink className={setActive} onClick={handleShow}>
+                                <CartWidget/> 
                             </NavLink>
-                        </div>
+                    </div>
                     )
                 }
             </Navbar>
 
+        <Modal
+            className='modalcart'
+            show={show}
+            onHide={handleClose}
+            backdrop="static"
+            keyboard={false}
+        >
+            <Modal.Header closeButton>
+                <Modal.Title>Carrito</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <CartDetail />
 
-            <Modal
-                className='modalcart'
-                show={show}
-                onHide={handleClose}
-                backdrop="static"
-                keyboard={false}
-            >
-                <Modal.Header closeButton>
-                    <Modal.Title>Carrito</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    Trekking
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="danger" onClick={handleClose}>
-                        Eliminar Tour
-                    </Button>
-                    <NavLink to="/carrito" clasName={setActive}><Button variant="primary" onClick={handleClose}>Ir a pagar</Button></NavLink>
-
-                </Modal.Footer>
-            </Modal>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="danger" onClick={handleClose}>
+                    Eliminar Tour
+                </Button>
+                <NavLink to="/carrito" clasName={setActive}><Button variant="primary" onClick={handleClose}>Ir a pagar</Button></NavLink>
+                
+            </Modal.Footer>
+        </Modal>
         </>
     )
 }
