@@ -6,7 +6,7 @@
     height: 950px;
 }
 
-.active{
+.active {
     color: black;
     margin: 1rem;
     text-decoration: none;
@@ -18,7 +18,7 @@
     text-decoration: underline;
 }
 
-.noactive{
+.noactive {
     color: grey;
     margin: 1rem;
     text-decoration: none;
@@ -34,34 +34,40 @@
 
 @media(min-width:576px) {
     .modalcart {
-    margin-top: 0;
-    margin-left: 13%;
+        margin-top: 0;
+        margin-left: 13%;
     }
 }
 
 @media(min-width:768px) {
     .modalcart {
-    margin-top: 0;
-    margin-left: 20%;
+        margin-top: 0;
+        margin-left: 20%;
     }
 }
 
 @media(min-width:992px) {
     .modalcart {
-    margin-top: 0;
-    margin-left: 28%;
+        margin-top: 0;
+        margin-left: 28%;
     }
 }
+
 @media(min-width:1200px) {
     .modalcart {
-    margin-top: 0;
-    margin-left: 31%;
+        margin-top: 0;
+        margin-left: 31%;
     }
 }
 
 @media(min-width:1400px) {
     .modalcart {
-    margin-top: 0;
-    margin-left: 33%;
+        margin-top: 0;
+        margin-left: 33%;
     }
+}
+
+.list-group {
+    margin-top: 50px;
+    /* Agrega un margen inferior de 10px */
 }
