@@ -1,0 +1,15 @@
+.columna{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    margin: 1px;
+    gap: 8px;
+}
+
+.textoTotal{
+    margin-left: auto;
+    margin-top: 5px;
+    font-family: 'poppin', sans-serif;
+    font-size: x-large;
+    color: var(--grey-color,#5a6871);
+}

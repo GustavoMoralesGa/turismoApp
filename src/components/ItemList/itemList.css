@@ -1,0 +1,7 @@
+.mapeocolumnas{
+    gap: 40px 120px;
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}

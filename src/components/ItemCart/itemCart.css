@@ -1,0 +1,5 @@
+.itemCart {
+    display: flex;
+    border-bottom: 1px solid gray;
+    max-width: 1rem auto;
+}
