@@ -56,7 +56,7 @@ export const Profile = () => {
                 </Modal>
 
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center col-10 col-sm-6 col-md-3 m-auto container-form">
+            {/*  <li class="list-group-item d-flex justify-content-between align-items-center col-10 col-sm-6 col-md-3 m-auto container-form">
                 Historial de Compras
                 <Button variant="dark" onClick={handleShow}>
                     Ver Detalle
@@ -75,7 +75,7 @@ export const Profile = () => {
                     </Modal.Footer>
                 </Modal>
 
-            </li>
+            </li>*/}
             {
                 role === "ADMIN" ? (
                     <>
