@@ -9,7 +9,7 @@ const Item = ({ info }) => {
     return(
         <>
             <Card className='carditem' style={{ width: '22rem'}}>
-                <Card.Img variant="top" src={info.image} />
+                <Card.Img variant="top" src="https://jorgeendigital.com/wp-content/uploads/2023/03/Torres-del-Paine.png" />
                 <Card.Body>
                     <Card.Title>{info.title}</Card.Title>
                     <Card.Text>
