@@ -2,6 +2,9 @@ import { React, useState } from 'react'
 import { NavLink } from "react-router-dom"
 import { Navbar, Container, Button, Modal } from "react-bootstrap"
 import '../assets/css/style.css'
+import { CartWidget } from '../CartWidget'
+
+import CartDetail from './CartDetail'
 
 const setActive = ({isActive}) => (isActive ? "active" : "noactive")
 
@@ -29,7 +32,8 @@ export default function Navigation() {
                     <NavLink to="/register" className={setActive}>
                         Registrarse
                     </NavLink>
-                    <NavLink className={setActive} onClick={handleShow}><img src="https://cdn-icons-png.flaticon.com/512/4202/4202388.png" alt="Logo" width="30" />
+                    <NavLink className={setActive} onClick={handleShow}>
+                        <CartWidget/> 
                     </NavLink>
                 </Container>
             </Navbar>
@@ -46,7 +50,8 @@ export default function Navigation() {
                 <Modal.Title>Carrito</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                Trekking 
+                <CartDetail />
+
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="danger" onClick={handleClose}>
